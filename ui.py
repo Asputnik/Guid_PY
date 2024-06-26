@@ -39,3 +39,28 @@ def print_data():
     with open('data_second_variant.csv', 'r', encoding='utf-8') as f:
         data_second = f.readlines()
         print(*data_second)
+
+
+        
+def search_entry():
+    search_name = input("Введите имя или фамилию для поиска записи: ")
+    found_entries = []
+    with open('data_first_variant.csv', 'r', encoding='utf-8') as f:
+        data = f.read().strip().split("\n\n")
+        for entry in data:
+            if search_name in entry:
+                found_entries.append(entry)
+
+    with open('data_second_variant.csv', 'r', encoding='utf-8') as f:
+        data = f.readlines()
+        for entry in data:
+            if search_name in entry:
+                found_entries.append(entry.strip())
+
+    if found_entries:
+        for i, entry in enumerate(found_entries):
+            print(f"{i+1}. {entry}")
+        return found_entries
+    else:
+        print("Запись не найдена.")
+        return None        
