@@ -111,7 +111,7 @@ def read_txt(filename):
     return phone_book
 
 
-# ---------- Запись файла ----------------  !!!Попробовать обьединить с Переносом записи п.7!!!
+# ---------- Запись файла ----------------
 def write_txt(filename_work, phone_book):
     with open(filename_work, "w", encoding="utf-8") as phout:
         for i in range(len(phone_book)):
