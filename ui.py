@@ -11,3 +11,14 @@ def input_data():
                     f"2 вариант:\n"
                     f"{name};{surname};{phone};{address}\n"
                     f"Выберите вариант: \n"))
+    
+    while var != 1 and var != 2:
+        print(" Неправильный ввод")
+        var = int(input('Повторите ввод! Введите 1 или 2: '))
+
+    if var == 1:
+        with open('data_first_variant.txt', 'a', encoding='utf-8') as f:
+            f.write(f'{name}\n{surname}\n{phone}\n{address}\n\n')
+    elif var == 2:
+        with open('data_second_variant.txt', 'a', encoding='utf-8') as f:
+            f.write(f'{name};{surname};{phone};{address}\n')
